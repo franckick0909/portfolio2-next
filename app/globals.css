@@ -2,32 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply font-jetBrainsMono;
+  }
+  .title {
+    @apply text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] leading-[1.1] font-oswald font-normal tracking-tight;
+  }
+  .h1 {
+    @apply text-[48px] lg:text-[80px] xl:text-[100px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[32px] lg:text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[24px] lg:text-[28px] xl:text-[32px] leading-[1.1] font-semibold;
+  }
+  .h4 {
+    @apply text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
+  .h5 {
+    @apply text-[16px] lg:text-[18px] xl:text-[20px] leading-[1.1] font-semibold;
+  }
+  .paragraph {
+    @apply text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.1] font-semibold;
+  }
+  .button {
+    @apply px-4 py-2 text-white bg-blue-500 rounded-md;
+  }
+  .grider1{
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.grider{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.textTransparent1 {
+  color: transparent;
+  text-shadow: 0 0 5px #0000001a;
+  color: white;
+  text-shadow: 1px 1px 0.5px black, 0 0 2px blue, 0 0 5px darkblue;
+}
+.textTransparent2 {
+  color: transparent;
+  text-shadow: 0 0 5px #0000001a;
+  color: black;
+  text-shadow: 1px 1px 0.5px white, 0 0 2px blue, 0 0 5px darkblue;
 }
