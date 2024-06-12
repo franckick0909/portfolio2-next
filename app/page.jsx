@@ -1,11 +1,18 @@
+"use client";
 import ScrollParallax from "@/components/ScrollParallax";
 import PageHero from "./hero/page";
+import PortfolioPage from "./portfolio/page";
 
 
 export default function Home() {
+
+
+
   return (
     <main className="">
       <PageHero />
+      <div className="h-48"></div>
+      <PortfolioPage />
       <ScrollParallax />
     </main>
   );

@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Header from "./Header";
-import { perspective } from "./Animation";
 
 
 const PageTransition = ({ children }) => {

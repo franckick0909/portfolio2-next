@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -23,6 +25,9 @@ module.exports = {
         jetBrainsMono: "var(--font-jetbrainsMono)",
         oswald: "var(--font-oswald)",
         poppins: "var(--font-poppins)",
+        Plaster: "var(--font-Plaster)",
+        playfair: "var(--font-playfairDisplaySC)",
+
       },
     
     extend: {

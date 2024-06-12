@@ -20,7 +20,8 @@ import img17 from "../public/images/sophie3.png";
 import img18 from "../public/images/bluel1.png";
 import img19 from "../public/images/bluel2.png";
 import img20 from "../public/images/bluel3.png";
-import TextSplit from "@/components/TextSplit";
+
+// import ecran from "../public/images/divers/ecrans.jpg";
 
 
 import Lenis from "@studio-freight/lenis";
@@ -198,15 +199,7 @@ const ScrollParallax = () => {
 
   return (
     <div className="w-full">
-      <div className="container h-screen bg-slate-300">
-      <div className="">
-        <p className="font-poppins paragraph max-w-96">
-          <TextSplit
-            phrase="Je suis un Développeur web, basé en Aquitaine, France. Je suis passionné par la conception web depuis que ça existe, et j'aime créer sur tous supports."
-            delay={0.02}
-          />
-        </p>
-      </div>
+      <div className=" h-[30vh]">
       </div>
       <div
         ref={container}

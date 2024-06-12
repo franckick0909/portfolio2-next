@@ -223,7 +223,7 @@ const MobileNavLink = ({ link, href }) => {
       <span className="w-full rounded bg-gradient-to-r to-transparent via-slate-950 from-slate-800 absolute bottom-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full z-[-1] scale-y-0 group-hover:scale-y-75 bg-origin-content cursor-pointer "></span>
       <Link
         href={href}
-        className="cursor-pointer z-[3000] text-white uppercase w-full group-hover:tracking-widest ease-linear duration-300"
+        className="cursor-pointer z-[3000] text-white uppercase w-full group-hover:tracking-widest ease-linear duration-300 font-playfair"
       >
         {link}
       </Link>
