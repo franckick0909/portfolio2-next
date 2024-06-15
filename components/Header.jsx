@@ -110,6 +110,7 @@ const Header = () => {
   };
 
   return (
+    
     <header className="w-full h-full flex py-8 text-black ">
       <div className="container flex items-center justify-between">
         {/* Logo */}
@@ -128,26 +129,34 @@ const Header = () => {
           {/* Burger button */}
           {/* DESKTOP MENU 3 traits */}
           <div className="fixed top-10 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20 z-[51]">
-            <button
-              className=" w-10 h-6 flex flex-col items-center justify-center gap-[5px] z-50 relative"
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
+              className="h-16 w-16 max-lg:h-14 max-lg:w-14 bg-black rounded-full shadow flex flex-col justify-center items-center gap-[5px] z-50 relative"
               onClick={() => setIsOpen((prev) => !prev)}
             >
               <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 1, duration: 0.5, ease: "easeInOut"}}
+               className="flex flex-col justify-center items-center gap-[5px] z-50 relative">
+              <motion.div
                 variants={topVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-black rounded"
+                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
               ></motion.div>
               <motion.div
                 variants={middleVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-black rounded "
+                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
               ></motion.div>
               <motion.div
                 variants={bottomVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-black rounded"
-              ></motion.div>
-            </button>
+                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
+              ></motion.div></motion.div>
+            </motion.button>
           </div>
           {/* Menu Mobile */}
 

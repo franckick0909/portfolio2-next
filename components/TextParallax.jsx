@@ -42,14 +42,14 @@ useEffect(() => {}, []);
 
   return (
     <main className="overflow-hidden">
-      <div className=" h-[12vh] " />
+      <div className="h-[20vh]" />
       <motion.div ref={container}>
         <Slider src={img1} left="-99%" progress={scrollYProgress} direction="left"  />
         <Slider src={img2} left="-25%" progress={scrollYProgress} direction="right" />
         <Slider src={img3} left="-55%" progress={scrollYProgress} direction="left"  />
       </motion.div>
 
-      <div className="h-[20vh]" />
+      <div className="h-[10vh]" />
     </main>
   );
 };
@@ -63,17 +63,23 @@ const Slider = ({ src, left, progress, direction }) => {
 
   return (
     <motion.div style={{ left, x }} className="flex whitespace-nowrap relative">
+      <div className="text-black">
       <Phrase src={src} p={"React Nextjs - Freelance"} />
-      <Phrase src={src} p={"Franck Chapelon"} />
-      <Phrase src={src} p={"Développeur web"}  />
+      </div>
+      <div className=" text-white">
+        <Phrase src={src} p={"Franck Chapelon"} />
+      </div>
+      <div className=" text-black">
+      <Phrase src={src} p={"Développeur web - Framer-Motion"}  />
+      </div>
     </motion.div>
   );
 };
 
 const Phrase = ({ src, p }) => {
   return (
-    <div className="flex gap-5 items-center px-5 my-2 bg-slate-600 py-2">
-      <p className=" font-Plaster text-5xl text-white lg:text-[5.5vw] textTransparent1">{p}</p>
+    <div className="flex gap-5 items-center px-5 my-1 bg-indigo-500 py-1">
+      <p className=" font-Plaster  lg:text-[7.5vw]">{p}</p>
       <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
         <Image src={src} alt="image" className="w-full h-full object-cover" />
       </span>

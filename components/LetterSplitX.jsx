@@ -14,7 +14,7 @@ const LetterSplitX = ({ phrase, delay}) => {
     const slideUp = {
         initial: {
           x: 400,
-          opacity: 1,
+          opacity: 0,
         },
         open: (i) => ({
           x: 0,
@@ -22,7 +22,8 @@ const LetterSplitX = ({ phrase, delay}) => {
           transition: {
             duration: 0.5,
             delay: i * (delay ? delay : 0.09),
-            ease: "easeOut",
+            type: "tween",
+
           },
         }),
         closed: {
@@ -31,6 +32,7 @@ const LetterSplitX = ({ phrase, delay}) => {
           transition: {
             duration: 0.5,
             delay: 0.09,
+            type: "tween",
           },
         },
       };

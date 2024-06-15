@@ -35,6 +35,24 @@ export const slideUp = {
   },
 };
 
+const slideDown = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      stiffness: 100,
+      type: "spring",
+      damping: 10,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 
 export const perspective = {
   initial: {

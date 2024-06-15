@@ -1,5 +1,6 @@
 "use client";
 import LetterSplitX from "@/components/LetterSplitX";
+import Stats from "@/components/Stats";
 import TextParallax from "@/components/TextParallax";
 import TextSplit from "@/components/TextSplit";
 // import Marquee from "react-fast-marquee";
@@ -10,9 +11,9 @@ const PageHero = () => {
   return (
     <AnimatePresence>
       <motion.section
-        className="bg-white w-full h-screen relative">
+        className=" w-full h-[calc(100vh-6rem)] relative bg-white">
 
-        <div className="w-full h-screen relative">
+
           <div className="container mx-auto">
             <div className="w-full h-full flex max-lg:flex-col justify-between pt-[100px] gap-10">
               <div className="p-4 flex flex-col justify-start max-lg:w-full">
@@ -21,7 +22,7 @@ const PageHero = () => {
                 </h1>
               </div>
 
-              <div className="h-[28rem] w-full flex flex-col lg:justify-between p-4 max-lg:w-full gap-20">
+              <div className=" w-full flex flex-col lg:justify-between p-4 max-lg:w-full gap-20">
                 <div className="w-full flex place-items-end justify-center lg:justify-end">
                   <p className="paragraph max-w-96 text-justify">
                     <TextSplit
@@ -40,11 +41,15 @@ const PageHero = () => {
               </div>
             </div>
           </div>
-          <div className="relative lg:top-[-1rem]">
-            <TextParallax />
-          </div>
+
+<div className="absolute bottom-8 w-full ">
+  <Stats />
+</div>
           
-        </div>
+          {/* <div className="mb-96">
+            <TextParallax />
+          </div> */}
+          
       </motion.section>
     </AnimatePresence>
   );

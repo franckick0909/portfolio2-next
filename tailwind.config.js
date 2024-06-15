@@ -1,3 +1,4 @@
+const { transform } = require('next/dist/build/swc');
 
 
 /** @type {import('tailwindcss').Config} */
@@ -32,6 +33,18 @@ module.exports = {
     
     extend: {
       keyframes: {
+        "slide-in": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "slide-up": {
+          from: { transform: "translateY(100%)" },
+          to: { transform: "translateY(0)" },
+        },
+      },
+
+
+      keyframes: {
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -42,6 +55,8 @@ module.exports = {
         },
       },
       animation: {
+        "slide-in": "slide-in 0.5s ease-in-out",
+        "slide-up": "slide-up 0.5s ease-in-out",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
