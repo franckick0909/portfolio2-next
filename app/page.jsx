@@ -2,6 +2,8 @@
 import ScrollParallax from "@/components/ScrollParallax";
 import PageHero from "./hero/page";
 import PortfolioPage from "./portfolio/page";
+import Footer1 from "@/components/Footer1";
+import Footer2 from "@/components/Footer2";
 
 
 export default function Home() {
@@ -11,9 +13,10 @@ export default function Home() {
   return (
     <main className="">
       <PageHero />
-      <div className="h-48"></div>
       <PortfolioPage />
       <ScrollParallax />
+      <Footer1 />
+      <Footer2 />
     </main>
   );
 }

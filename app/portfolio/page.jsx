@@ -129,17 +129,18 @@ const isFilterInView = useInView(filters, {margin: "-100px"});
 
       className="w-full min-h-screen bg-light dark:bg-dark overflow-hidden"
     >
-      <div className="h-48"></div>
+
     <section className="w-full min-h-screen flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-xl py-14 bg-white">
-      <div className="flex items-center justify-center w-full">
+
+      <div className="flex items-center justify-center w-full my-20">
         <motion.h1
-         className="uppercase inline-block items-center title">
+         className="uppercase inline-flex items-center  title">
           <LetterSplitX phrase="Mes Projets"  />
         </motion.h1>
       </div>
 
 
-      <div className="h-48"></div>
+
 
       <article ref={filters} className="flex justify-between gap-4 max-lg:flex-col w-full h-auto">
         <div className="overflow-hidden">
@@ -199,7 +200,7 @@ const isFilterInView = useInView(filters, {margin: "-100px"});
         </div>
 
         <motion.div
-         className="w-full flex flex-col gap-6 flex-1 p-4 rounded-lg bg-white">
+         className="w-full flex flex-col gap-6 flex-1 rounded-lg bg-white">
           {filteredProjects.map((projet) => (
             <motion.div
               variants={variants}

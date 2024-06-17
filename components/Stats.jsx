@@ -36,13 +36,14 @@ const Stats = () => {
         variants={slideDown}
         initial="initial"
         animate="animate"
-        className="flex flex-wrap gap-4 max-w-full mx-auto xl:max-w-none overflow-hidden p-[2px]"
+        className="grider2 gap-4"
+        // className="flex flex-wrap gap-4 max-w-full mx-auto xl:max-w-none overflow-hidden p-[2px]"
       >
         {stats.map((stat, index) => (
           <motion.div
             variants={slideDown}
             key={index}
-            className="w-full flex flex-1 flex-wrap gap-6 items-center justify-start border rounded-md px-2 py-1 shadow "
+            className="w-full flex flex-1 flex-wrap gap-0 lg:gap-2 xl:gap-4 items-center justify-start border rounded-md px-2 py-1 shadow "
           >
             <CountUp
               start={0}
@@ -54,7 +55,7 @@ const Stats = () => {
               decimal=","
               prefix=""
               suffix=""
-              className="text-4xl xl:text-6xl font-extrabold text-indigo-600 font-jetBrainsMono"
+              className="h2 font-extrabold text-indigo-600 font-jetBrainsMono"
             />
             <p
               className={` ${

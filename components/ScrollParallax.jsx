@@ -244,7 +244,7 @@ const ScrollParallax = () => {
           />
         </div>
       </div>
-      <div className="h-screen"></div>
+      <div className="h-[30vh]"></div>
     </div>
   );
 };
@@ -260,16 +260,18 @@ const Column = ({ images, y = 0 }) => {
       {images.map((image, index) => (
         <div
           key={index}
-          className="relative min-h-[250px] w-full rounded-lg overflow-hidden group"
+          className="relative h-[400px] w-[300px] rounded-lg overflow-hidden group"
+          // className="relative min-h-[250px] w-full rounded-lg overflow-hidden group"
         >
-          <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" />
+          <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" className="group-hover:grayscale-1" />
           
-          <div className="absolute inset-0 translate-y-full bg-gradient-to-t from-white/50 to-indigo-600 transition-transform duration-300 group-hover:translate-y-0 flex flex-col items-center justify-center gap-4"> 
+          <div className="absolute inset-0 translate-y-full bg-gradient-to-t from-black to-indigo-700/70 transition-transform duration-300 group-hover:translate-y-0 flex flex-col items-center justify-center gap-4"> 
             <h4 className="h4 text-white">{image.title}</h4>
             <a
               href={image.link}
               target="_blank"
-              className="flex items-center gap-2 text-3xl font-bold text-black transition-all duration-300 hover:text-white hover:scale-110"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-8xl font-bold text-indigo-500 transition-all duration-300 hover:text-white hover:scale-110"
             >
               {image.icon}
             </a>

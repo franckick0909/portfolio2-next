@@ -2,55 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-  body {
-    @apply font-jetBrainsMono;
-  }
-  .title {
-    @apply text-[3rem] md:text-[5rem] lg:text-[7rem] xl:text-[10rem] leading-[1.3] tracking-[-2px] font-playfair font-bold;
-  }
-  .h1 {
-    @apply text-[48px] lg:text-[80px] xl:text-[100px] leading-[1.1] font-semibold ;
-  }
-  .h2 {
-    @apply text-[32px] lg:text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
-  }
-  .h3 {
-    font-size: clamp(1.5rem, 1.5vw, 2rem);
-    line-height: 1.1;
-  }
-  .h4 {
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-    line-height: 1.1;
-  }
-  .h5 {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    line-height: 1.1;
-  }
-  .paragraph {
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    line-height: 1.4;
-    font-weight: 300;
-    font-style: normal;
-    font-family: 'Poppins', sans-serif;
-  }
-
+.title {
+  font-size: clamp(2rem, 7vw, 12rem);
+  line-height: 1.3;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: -5px;
 }
+.h1 {
+  font-size: clamp(3rem, 4vw, 6.25rem);
+  line-height: 1.1;
+}
+.h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+}
+.h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+.h4 {
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  line-height: 1.1;
+}
+.h5 {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  line-height: 1.1;
+}
+.paragraph {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.4;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Poppins", sans-serif;
+}
+
 .shadow {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .shadowInset {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-.grider{
+.grider {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
 }
-.grider2{
+.grider2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .textTransparent1 {

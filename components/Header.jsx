@@ -128,14 +128,15 @@ const Header = () => {
         <div className="">
           {/* Burger button */}
           {/* DESKTOP MENU 3 traits */}
-          <div className="fixed top-10 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20 z-[51]">
+          <div className="fixed top-4 max-lg:top-6 right-4 z-[51]">
             <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
-              className="h-16 w-16 max-lg:h-14 max-lg:w-14 bg-black rounded-full shadow flex flex-col justify-center items-center gap-[5px] z-50 relative"
+              className="h-16 w-16 max-lg:h-12 max-lg:w-12 bg-slate-900 rounded-full shadow flex flex-col justify-center items-center gap-[5px] z-50 relative"
               onClick={() => setIsOpen((prev) => !prev)}
             >
+              <div className="absolute flex items-center justify-center h-14 w-14  rounded-full ring-1 ring-indigo-500 "></div>
               <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -227,7 +228,7 @@ const MobileNavLink = ({ link, href }) => {
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="text-8xl max-md:text-5xl relative group"
+      className="text-8xl max-md:text-4xl relative group"
     >
       <span className="w-full rounded bg-gradient-to-r to-transparent via-slate-950 from-slate-800 absolute bottom-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full z-[-1] scale-y-0 group-hover:scale-y-75 bg-origin-content cursor-pointer "></span>
       <Link

@@ -15,24 +15,26 @@ const PageHero = () => {
 
 
           <div className="container mx-auto">
-            <div className="w-full h-full flex max-lg:flex-col justify-between pt-[100px] gap-10">
-              <div className="p-4 flex flex-col justify-start max-lg:w-full">
-                <h1 className="text-5xl lg:text-7xl xl:text-9xl font-oswald font-semibold text-black uppercase max-w-96">
+            <div className="w-full h-full flex max-lg:flex-col justify-between mt-[40px] gap-4">
+
+
+              <div className="p-4 flex flex-col flex-[2]">
+                <h1 className="text-5xl lg:text-7xl xl:text-9xl font-oswald font-semibold text-slate-900 uppercase max-w-96">
                   <TextSplit phrase="Développeur Front-End" delay={0.08} />
                 </h1>
               </div>
 
-              <div className=" w-full flex flex-col lg:justify-between p-4 max-lg:w-full gap-20">
-                <div className="w-full flex place-items-end justify-center lg:justify-end">
-                  <p className="paragraph max-w-96 text-justify">
+              <div className="flex flex-1 flex-col justify-between h-[50vh] gap-10 p-4">
+                <div className="flex flex-1 mt-10 max-lg:justify-center">
+                  <p className="paragraph max-w-96 text-balance">
                     <TextSplit
                       phrase="Je suis un Développeur web, basé en Aquitaine, France. Je suis passionné par la conception web depuis que ça existe, et j'aime créer sur tous supports."
                       delay={0.04}
                     />
                   </p>{" "}
                 </div>
-                <div className="w-full flex place-items-end justify-end">
-                  <h1 className="text-4xl lg:text-6xl font-oswald font-semibold text-black uppercase max-w-96 ">
+                <div className="w-full flex-1 flex max-lg:justify-end">
+                  <h1 className="h1 font-oswald font-semibold text-slate-900 uppercase max-w-[28rem] ">
                     {/* <TextSplit phrase="React Freelance" delay={0.02} /> */}
                     <LetterSplitX phrase="React" delay={0.05} />
                     <LetterSplitX phrase="Freelance" delay={0.09} />
@@ -42,7 +44,7 @@ const PageHero = () => {
             </div>
           </div>
 
-<div className="absolute bottom-8 w-full ">
+<div className="w-full mt-4 sm:mt-10 md:mt-20 lg:mt-32">
   <Stats />
 </div>
           
