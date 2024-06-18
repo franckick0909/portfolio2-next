@@ -1,6 +1,8 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaRegEye, FaAward } from "react-icons/fa";
+import { FaRegEye, FaAward, FaDownload } from "react-icons/fa";
 
 const Biographie = () => {
   return (
@@ -60,13 +62,30 @@ const Biographie = () => {
       </q>
       <div className="w-full flex items-center justify-between gap-4 flex-wrap">
         <div className="flex flex-col items-start justify-start flex-1 gap-3">
-
-      <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-          Border Magic
-        </span>
-      </button>
+          <Link href="/public/cv/CV Franck_Chapelon_2024.pdf">
+            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:ring-offset-1 focus:ring-offset-indigo-50">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-1 paragraph font-medium text-black backdrop-blur-3xl">
+                Télécharger mon CV
+                <motion.div
+                  variants={{
+                    initial: {
+                      x: "100%",
+                      opacity: 0,
+                    },
+                    whileHover: {
+                      x: "0%",
+                      opacity: 1,
+                    },
+                  }}
+                  transition={{ type: "spring" }}
+                  className="relative flex items-center justify-center bg-red-500 p-1 rounded-full"
+                >
+                  <FaDownload className="h4 text-neutral-300" />
+                </motion.div>
+              </span>
+            </button>
+          </Link>
 
           <Link
             target="_blank"
