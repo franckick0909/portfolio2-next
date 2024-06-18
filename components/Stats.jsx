@@ -31,19 +31,19 @@ const Stats = () => {
   ];
 
   return (
-    <section className="container mx-auto">
+    <section className="w-full bg-light dark:bg-dark px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
       <motion.div
         variants={slideDown}
         initial="initial"
         animate="animate"
-        className="grider2 gap-4"
+        className="w-full grider2 gap-4"
         // className="flex flex-wrap gap-4 max-w-full mx-auto xl:max-w-none overflow-hidden p-[2px]"
       >
         {stats.map((stat, index) => (
           <motion.div
             variants={slideDown}
             key={index}
-            className="w-full flex flex-1 flex-wrap gap-0 lg:gap-2 xl:gap-4 items-center justify-start border rounded-md px-2 py-1 shadow "
+            className="w-full flex flex-1 flex-wrap gap-0 lg:gap-2 xl:gap-4 items-center justify-start border rounded-md px-2 py-1 shadow-sm  bg-light dark:bg-dark"
           >
             <CountUp
               start={0}

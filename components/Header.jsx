@@ -111,8 +111,8 @@ const Header = () => {
 
   return (
     
-    <header className="w-full h-full flex py-8 text-black ">
-      <div className="container flex items-center justify-between">
+    <header className="py-8 relative bg-light dark:bg-dark overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="">
           <h1 className="text-4xl font-semibold">

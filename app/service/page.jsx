@@ -1,8 +1,12 @@
 
 
+
 const PageService = () => {
   return (
-    <div className=''>Service</div>
+    <div className=''>
+      <h1>Services</h1>
+
+    </div>
   )
 }
 

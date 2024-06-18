@@ -12,7 +12,6 @@ import { RiListSettingsLine } from "react-icons/ri";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import LetterSplitX from "@/components/LetterSplitX";
 
-
 const projet = [
   {
     id: "1",
@@ -94,137 +93,170 @@ const PortfolioPage = () => {
   const filteredProjects =
     filter === "Tous" ? projet : projet.filter((p) => p.theme === filter);
 
-
-    const variants = {
-      hidden: {
-        opacity: 0,
-        y: 100,
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.2,
       },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          delay: 0.2,
-        },
+    },
+    exit: {
+      opacity: 0,
+      y: 100,
+      transition: {
+        duration: 0.5,
+        delay: 0.2,
       },
-      exit: {
-        opacity: 0,
-        y: 100,
-        transition: {
-          duration: 0.5,
-          delay: 0.2,
-        },
-      },
-    };
-  
-const filters = useRef();
-const isFilterInView = useInView(filters, {margin: "-100px"});
+    },
+  };
 
-
+  const filters = useRef();
+  const isFilterInView = useInView(filters, { margin: "-100px" });
 
   return (
     <AnimatePresence>
-          <motion.div
+      <motion.section className="w-full min-h-screen relative bg-light dark:bg-dark overflow-hidden">
+        <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-xl py-14">
+          <motion.h1 className="uppercase inline-flex items-center title my-20">
+            <LetterSplitX phrase="Mes Projets" />
+          </motion.h1>
 
-      className="w-full min-h-screen bg-light dark:bg-dark overflow-hidden"
-    >
+          <article
+            ref={filters}
+            className="flex justify-between gap-4 max-lg:flex-col w-full h-auto"
+          >
+            <div className="overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, x: -300 }}
+                animate={
+                  isFilterInView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -300 }
+                }
+                transition={{
+                  duration: 0.5,
+                  type: "spring",
+                  delay: 0.2,
+                  stiffness: 100,
+                  damping: 20,
+                }}
+                className="max-w-full lg:w-56 bg-black p-4 rounded-lg mt-0"
+              >
+                <div className="">
+                  <h4 className="h4 font-poppins mb-4 text-white flex items-center justify-between">
+                    Filtres{" "}
+                    <span>
+                      <RiListSettingsLine />
+                    </span>
+                  </h4>
+                </div>
+                <div className="border-b-[0.5px] border-indigo-100 mb-8"></div>
+                <div className="grider2 place-content-start place-items-start">
+                  <button
+                    onClick={() => setFilter("Tous")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Tous" ? "bg-indigo-500 text-white" : ""
+                    }`}
+                  >
+                    Tous
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Portfolio")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Portfolio"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Portfolio
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Vitrine")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Vitrine"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Vitrine
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Ecommerce")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Ecommerce"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Ecommerce
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Evènement")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Evènement"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Evènement
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Personnel")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Personnel"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Personnel
+                  </button>
+                  <button
+                    onClick={() => setFilter("Site Entreprise")}
+                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Site Entreprise"
+                        ? "bg-indigo-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    Site Entreprise
+                  </button>
+                </div>
+              </motion.div>
+            </div>
 
-    <section className="w-full min-h-screen flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-xl py-14 bg-white">
-
-      <div className="flex items-center justify-center w-full my-20">
-        <motion.h1
-         className="uppercase inline-flex items-center  title">
-          <LetterSplitX phrase="Mes Projets"  />
-        </motion.h1>
-      </div>
-
-
-
-
-      <article ref={filters} className="flex justify-between gap-4 max-lg:flex-col w-full h-auto">
-        <div className="overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, x: -300}}
-          animate={ isFilterInView ? {opacity: 1, x: 0} : {opacity: 0, x: -300} }
-          transition={{ duration: 0.5, type: "spring", delay: 0.2, stiffness: 100, damping: 20}}
-         className="max-w-full lg:w-56 bg-black p-4 rounded-lg mt-0">
-          <div className="">
-          <h4 className="h4 font-poppins mb-4 text-white flex items-center justify-between">Filtres <span><RiListSettingsLine /></span></h4></div>
-          <div className="border-b-[0.5px] border-indigo-100 mb-8"></div>
-          <div className="grider2 place-content-start place-items-start">
-            <button
-              onClick={() => setFilter("Tous")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Tous" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Tous
-            </button>
-            <button
-              onClick={() => setFilter("Site Portfolio")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Portfolio" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Portfolio
-            </button>
-            <button
-              onClick={() => setFilter("Site Vitrine")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Vitrine" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Vitrine
-            </button>
-            <button
-              onClick={() => setFilter("Site Ecommerce")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Ecommerce" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Ecommerce
-            </button>
-            <button
-              onClick={() => setFilter("Site Evènement")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Evènement" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Evènement
-            </button>
-            <button
-              onClick={() => setFilter("Site Personnel")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Personnel" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Personnel
-            </button>
-            <button
-              onClick={() => setFilter("Site Entreprise")}
-              className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${filter === "Site Entreprise" ? "bg-indigo-500 text-white" : ""}`}
-            >
-              Site Entreprise
-            </button>
-          </div>
-        </motion.div>
-        </div>
-
-        <motion.div
-         className="w-full flex flex-col gap-6 flex-1 rounded-lg bg-white">
-          {filteredProjects.map((projet) => (
-            <motion.div
-              variants={variants}
-              initial="hidden"
-              animate="show"
-              exit="exit"
-             key={projet.id} className="">
-              <Collapse
-                num={projet.num}
-                title={projet.title}
-                stack={projet.stack}
-                date={projet.date}
-                imgProjet={projet.image}
-                theme={projet.theme}
-                desc={projet.desc}
-                href={projet.href}
-                github={projet.github}
-              />
+            <motion.div className="w-full flex flex-col gap-6 flex-1 rounded-lg ">
+              {filteredProjects.map((projet) => (
+                <motion.div
+                  variants={variants}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                  key={projet.id}
+                  className=""
+                >
+                  <Collapse
+                    num={projet.num}
+                    title={projet.title}
+                    stack={projet.stack}
+                    date={projet.date}
+                    imgProjet={projet.image}
+                    theme={projet.theme}
+                    desc={projet.desc}
+                    href={projet.href}
+                    github={projet.github}
+                  />
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-      </article>
-    </section>
-    </motion.div>
+          </article>
+        </div>
+      </motion.section>
     </AnimatePresence>
   );
 };

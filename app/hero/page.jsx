@@ -14,17 +14,17 @@ const PageHero = () => {
         className=" w-full h-[calc(100vh-6rem)] relative bg-white">
 
 
-          <div className="container mx-auto">
+          <div className="w-full mx-auto bg-light dark:bg-dark overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="w-full h-full flex max-lg:flex-col justify-between mt-[40px] gap-4">
 
 
-              <div className="p-4 flex flex-col flex-[2]">
+              <div className=" flex flex-col flex-[2]">
                 <h1 className="text-5xl lg:text-7xl xl:text-9xl font-oswald font-semibold text-slate-900 uppercase max-w-96">
                   <TextSplit phrase="Développeur Front-End" delay={0.08} />
                 </h1>
               </div>
 
-              <div className="flex flex-1 flex-col justify-between h-[50vh] gap-10 p-4">
+              <div className="flex flex-1 flex-col justify-between h-[50vh] gap-10">
                 <div className="flex flex-1 mt-10 max-lg:justify-center">
                   <p className="paragraph max-w-96 text-balance">
                     <TextSplit
@@ -44,7 +44,8 @@ const PageHero = () => {
             </div>
           </div>
 
-<div className="w-full mt-4 sm:mt-10 md:mt-20 lg:mt-32">
+{/* <div className="w-full mt-4 sm:mt-10 md:mt-20 lg:mt-32"> */}
+<div className="w-full absolute bottom-10 left-0">
   <Stats />
 </div>
           
