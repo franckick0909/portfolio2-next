@@ -203,7 +203,7 @@ const ScrollParallax = () => {
       </div>
       <div
         ref={container}
-        className="w-full h-[175vh] bg-slate-900 p-[2vw] overflow-hidden relative flex justify-center gap-[2vw] box-border "
+        className="w-full h-[175vh] bg-slate-950 dark:bg-white p-[2vw] overflow-hidden relative flex justify-center gap-[2vw] box-border "
       >
         <div className="relative top-[-45%]">
           <Column

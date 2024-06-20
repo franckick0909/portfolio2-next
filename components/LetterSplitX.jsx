@@ -41,7 +41,7 @@ const LetterSplitX = ({ phrase, delay}) => {
   return (
     <AnimatePresence>
     <div ref={container} className='flex'>
-            <p  className="m-0 gap-2 inline-flex flex-wrap tracking-[-0.02em]">
+            <p className="m-0 gap-2 inline-flex flex-wrap tracking-[-0.02em]">
                 {
                     letter.map((word, index) => {
                         return (

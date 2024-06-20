@@ -32,7 +32,9 @@ const TextSplit = ({ phrase, delay }) => {
   return (
     <AnimatePresence>
     <div ref={container} className='flex'>
-            <p  className="m-0 gap-2 inline-flex flex-wrap">
+            <p
+            style={{ lineHeight: 0.85}}
+             className="m-0 gap-2 inline-flex flex-wrap">
                 {
                     letter.map((word, index) => {
                         return (

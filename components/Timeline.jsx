@@ -23,19 +23,19 @@ const Details = ({position, compagny, compagnyLink, time, adresse, work, diplome
 
       <motion.div
       ref={boxRef}
-      initial={{ x: "-200px" }}
+      initial={{ x: "-100%" }}
       animate={isboxInView ? { x: 0 } : {}}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
 
-       className="p-4 rounded-md border border-slate-400">
-        <h3 className="flex flex-wrap capitalize font-bold text-slate-900">{position}&nbsp;<a href={compagnyLink} target="_blank" className="text-indigo-500 text-xl">@{compagny}</a></h3>
-        <span className="capitalize font-bold text-fuchsia-500 text-sm">
+       className="p-6 border border-slate-200 dark:border-slate-700 rounded-md shadow-inner bg-white dark:bg-slate-950">
+        <h4 className="flex flex-wrap capitalize font-semibold text-black dark:text-white h4">{position}&nbsp;<a href={compagnyLink} target="_blank" className="text-indigo-500 h5">@{compagny}</a></h4>
+        <span className="capitalize font-semibold text-indigo-700 text-sm">
           {time}</span>
           &nbsp;|&nbsp;
-         <span className="capitalize font-medium text-dark/75 pText text-slate-500"> 
+         <span className="capitalize font-medium text-dark/75 paragraph text-slate-500"> 
           {adresse}</span>
-        <p className="font-medium w-full pText text-slate-800">{work}</p>
-        <p className="font-bold w-full pText text-slate-900 flex items-center"> {diplome}&nbsp;<span className="text-xl">{obtenu}</span></p>
+        <p className="font-medium w-full paragraph text-slate-800">{work}</p>
+        <h5 className="font-bold w-full paragraph text-slate-900 flex items-center h5"> {diplome}&nbsp;<span className="h5">{obtenu}</span></h5>
       </motion.div>
     </li>
   );
@@ -97,7 +97,7 @@ const Timeline = () => {
 
       <motion.div
       style={{scaleY: scrollYProgress}}
-       className="absolute -left-[2.7rem] top-0 w-[4px] h-full bg-slate-900 origin-top rounded-lg" />
+       className="absolute -left-[2.7rem] top-0 w-[4px] h-full bg-slate-950 origin-top rounded-lg" />
 
 
       <ul className="w-full flex flex-col items-start justify-between">

@@ -2,15 +2,15 @@ import Link from "next/link";
 
 const ContentFooter = () => {
   return (
-    <footer className="bg-slate-900 p-6 md:py-12 w-full h-full dark:bg-slate-50 flex items-center">
+    <footer className="p-6 md:py-12 w-full h-full bg-slate-100 dark:bg-slate-950 flex items-center">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         <div className="grid">
-          <div className="flex items-baseline gap-4 mb-8 text-white dark:text-black">
+          <div className="flex items-baseline gap-4 mb-8 text-black dark:text-white">
             <MountainIcon className="h-7 w-7" />
             <h3 className="h3 font-semibold ">Franck Chapelon</h3>
           </div>
-          <h4 className="h5 mb-2 text-indigo-500 dark:text-indigo-900">DEVELOPPEUR WEB FRONT-END FREELANCE</h4>
-          <p className="text-slate-300 dark:text-slate-900">
+          <h4 className="h5 mb-2 text-indigo-500 dark:text-indigo-500">DEVELOPPEUR WEB FRONT-END FREELANCE</h4>
+          <p className="text-slate-950 dark:text-slate-200">
             1505 Route de la forêt,
             <br />
             24300 Savignac de Nontron
@@ -19,8 +19,8 @@ const ContentFooter = () => {
           </p>
         </div>
         <div className="grid">
-            <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-900">Société</h3>
-            <div className="flex flex-col text-slate-300 dark:text-slate-900">
+            <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-400">Société</h3>
+            <div className="flex flex-col text-slate-950 dark:text-slate-200">
           <Link href="#" prefetch={false}>
             Tarifs
           </Link>
@@ -33,8 +33,8 @@ const ContentFooter = () => {
 
         </div>
         <div className="grid">
-          <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-900">Ressources</h3>
-          <div className="flex flex-col text-slate-300 dark:text-slate-900">
+          <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-400">Ressources</h3>
+          <div className="flex flex-col text-slate-950 dark:text-slate-200">
           <Link href="#" prefetch={false}>
             Blog
           </Link>
@@ -49,8 +49,8 @@ const ContentFooter = () => {
           </Link>
         </div></div>
         <div className="grid">
-          <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-900">À propos</h3>
-          <div className="flex flex-col text-slate-300 dark:text-slate-900">
+          <h3 className="h3 font-semibold mb-8 text-indigo-500/70 dark:text-indigo-400">À propos</h3>
+          <div className="flex flex-col text-slate-950 dark:text-slate-200">
           <Link href="#" prefetch={false}>
             Qui sommes-nous ?
           </Link>

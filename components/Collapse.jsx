@@ -152,7 +152,7 @@ const Collapse = ({
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="border-separate max-w-full w-full items-center justify-between gap-4 flex max-md:flex-col max-md:items-start h-auto bg-white rounded-b-md p-4 shadow border-black overflow-hidden"
+            className="border-separate max-w-full w-full items-center justify-between gap-4 flex max-md:flex-col max-md:items-start h-auto bg-white dark:bg-slate-950/10 rounded-b-md p-4 shadow border-black overflow-hidden"
           >
             <div className="flex-1 h-full flex items-center w-full justify-start">
               {/* <h3 className="h3 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
@@ -183,7 +183,7 @@ const Collapse = ({
                 transition={{ type: "spring" }}
                 className=" z-10 p-2 max-md:flex hidden justify-end flex-1 w-full"
               >
-                <FiArrowRight className="text-3xl text-neutral-600" />
+                <FiArrowRight className="text-3xl text-neutral-600 dark:text-neutral-300 " />
               </motion.div>
             </div>
             <motion.div
@@ -209,10 +209,10 @@ const Collapse = ({
 
             <div className="flex max-md:flex items-center max-md:justify-between max-md:w-full flex-1">
               <div className="flex-1 h-full flex items-center justify-start w-full">
-                <p className="paragraph">{stack}</p>
+                <p className="paragraph text-black dark:text-white">{stack}</p>
               </div>
               <div className="flex-1 h-full flex items-center justify-center w-full max-md:justify-end">
-                <h5 className="h5">{date}</h5>
+                <h5 className="h5 text-black dark:text-white">{date}</h5>
               </div>
             </div>
             <div className="flex-1 h-full flex items-center justify-end w-full max-md:hidden">
@@ -231,13 +231,13 @@ const Collapse = ({
                 transition={{ type: "spring" }}
                 className="relative z-10 p-4"
               >
-                <FiArrowRight className="text-5xl text-neutral-600" />
+                <FiArrowRight className="text-5xl text-neutral-600 dark:text-neutral-300" />
               </motion.div>
             </div>
           </motion.div>
 
           <motion.div
-            className={`w-full h-auto overflow-hidden max-md:text-sm text-base rounded-md shadow ${
+            className={`w-full h-auto overflow-hidden max-md:text-sm text-base rounded-md ${
               openCollapse ? "h-auto" : "h-0"
             }`}
             variants={list}
@@ -245,7 +245,7 @@ const Collapse = ({
             animate={openCollapse ? "visible" : "hidden"}
           >
             <motion.div
-              className="w-full h-max px-4 py-4 bg-white rounded-md overflow-hidden max-md:text-sm text-base  grider gap-4"
+              className="w-full h-max px-4 py-4 bg-slate-950 dark:bg-white rounded-md overflow-hidden max-md:text-sm text-base  grider gap-4"
               variants={item}
             >
               <motion.div className="h-full w-full rounded-md " variants={item}>
@@ -257,10 +257,10 @@ const Collapse = ({
               </motion.div>
 
               <motion.div
-                className="w-full h-full p-4 rounded-md bg-white max-md:text-sm text-base"
+                className="w-full h-full p-4 rounded-md max-md:text-sm text-base"
                 variants={item}
               >
-                <h5 className="text-black h5 bold uppercase">Navigation</h5>
+                <h5 className="text-white dark:text-black h5 bold uppercase pb-1">Navigation</h5>
                 <div className=" border-indigo-500 mb-4 border-solid border-b-[1px]"></div>
 
                 <div className="flex gap-4 items-center justify-between flex-wrap mt-4 uppercase w-full h-auto">
@@ -268,7 +268,7 @@ const Collapse = ({
                     target="_blank"
                     rel="noreferrer"
                     href={github}
-                    className="flex overflow-hidden w-full relative shadowInset"
+                    className="flex overflow-hidden w-full relative shadow text-white dark:text-black"
                   >
                     <DrawOutlineButton>
                       Github
@@ -280,7 +280,7 @@ const Collapse = ({
                     target="_blank"
                     rel="noreferrer"
                     href={href}
-                    className="flex overflow-hidden w-full relative shadowInset"
+                    className="flex overflow-hidden w-full relative shadow text-white dark:text-black"
                   >
                     <DrawOutlineButton>
                       {title}
@@ -291,12 +291,12 @@ const Collapse = ({
               </motion.div>
 
               <motion.div
-                className="w-full h-full p-4 rounded-md bg-white max-md:text-sm text-base"
+                className="w-full h-full p-4 rounded-md bg-slate-950 dark:bg-white max-md:text-sm text-base"
                 variants={item}
               >
-                <h4 className="text-black h5 bold">DESCRIPTION</h4>
+                <h4 className="text-white dark:text-black h5 bold uppercase pb-1">DESCRIPTION</h4>
                 <div className="border-indigo-500 mb-4 border-b-[0.5px]"></div>
-                <p className="paragraph text-black">{desc}</p>
+                <p className="paragraph text-white dark:text-black">{desc}</p>
               </motion.div>
             </motion.div>
           </motion.div>

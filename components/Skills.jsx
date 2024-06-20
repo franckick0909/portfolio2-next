@@ -45,7 +45,7 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <motion.div
           whileHover={{ y: -5 }}
-           key={index} className="overflow-hidden hover:shadow-fuchsia-500/50 hover:shadow-lg rounded-lg transition-shadow duration-300 z-10">
+           key={index} className="overflow-hidden hover:shadow-indigo-500/30 hover:shadow-lg rounded-lg transition-shadow duration-300 z-10">
             <motion.div
               initial={{ y: 200, opacity: 0 }}
               animate={isSkillInView ? { y: 0, opacity: 1 } : {}}
@@ -56,13 +56,13 @@ const Skills = () => {
               exit={{ y: -200, opacity: 0}}
               className=" rounded-lg shadow-lg"
             >
-              <motion.div className="flex flex-col border border-slate-400 rounded-lg p-4 w-max items-center justify-center hover:border-fuchsia-500 transition-all duration-300 z-10">
+              <motion.div className="flex flex-col border border-slate-200 dark:border-slate-700 rounded-lg p-4 w-max items-center justify-center hover:border-indigo-500 transition-all duration-300 z-10">
                 <Image
                   src={skill.img}
                   alt={skill.skill}
                   className="w-20 h-20"
                 />
-                <p className="text-sm font-bold text-center">{skill.skill}</p>
+                <p className="text-sm font-bold text-center text-black dark:text-white">{skill.skill}</p>
               </motion.div>
             </motion.div>
           </motion.div>

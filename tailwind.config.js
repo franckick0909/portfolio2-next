@@ -32,6 +32,10 @@ module.exports = {
       },
     
     extend: {
+      backgroundImage: {
+        'banner': "url('../public/images/skills/codeurCafe.jpg')",
+      },
+
       keyframes: {
         "slide-in": {
           from: { transform: "translateX(-100%)" },

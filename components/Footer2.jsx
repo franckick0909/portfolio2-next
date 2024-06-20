@@ -3,7 +3,7 @@ import ContentFooter from "./ContentFooter";
 const Footer2 = () => {
   return (
     <div
-      className="relative h-screen bg-gradient-to-t from-white via-white dark:from-black dark:via-black"
+      className="relative h-screen bg-slate-950 dark:bg-white"
       style={{ clipPath: "polygon(0% 0, 100% 0, 100% 100%, 0 100%)" }}
     >
       <div className="relative h-[calc(100vh+800px] -top-[100vh]">

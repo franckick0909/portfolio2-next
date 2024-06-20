@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NavTop = () => {
-
   const navLinks = [
     { text: "Home", href: "/" },
     { text: "Portfolio", href: "/portfolio" },
@@ -22,16 +21,22 @@ const NavTop = () => {
       <div className="flex items-center justify-end uppercase gap-8 text-base mr-24 overflow-hidden">
         {navLinks.map((link, index) => {
           return (
-            <motion.div
-              key={index}
-              className="relative overflow-hidden">
-              <Link href={link.href} className={`${pathname === link.href && "text-indigo-500 border-b-[1px]"} text-black font-medium hover:text-indigo-500 transition-all `}>
+            <motion.div key={index} className="relative overflow-hidden">
+              <Link
+                href={link.href}
+                className={`${
+                  pathname === link.href
+                    ? "text-indigo-500"
+                    : "text-black dark:text-white"
+                } font-medium dark:font-normal hover:text-indigo-500 dark:hover:text-indigo-400 transition-all`}
+              >
                 <AnimatedLink title={link.text} />
               </Link>
             </motion.div>
           );
         })}
       </div>
+      
     </>
   );
 };

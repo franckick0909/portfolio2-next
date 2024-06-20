@@ -14,7 +14,7 @@ const Heading = ({ heading, subheading }) => {
         staggerChildren: 0.075,
         delayChildren: 0.25,
       }}
-      className="relative z-10 block  font-bold text-neutral-600 transition-colors duration-500 group-hover:text-neutral-50  h3 "
+      className="relative z-10 block  font-bold text-neutral-600 dark:text-neutral-300 transition-colors duration-500 group-hover:text-neutral-50  h3 "
     >
       {heading.split("").map((l, i) => (
         <motion.span
@@ -30,7 +30,7 @@ const Heading = ({ heading, subheading }) => {
         </motion.span>
       ))}
     </motion.h3>
-    <span className="relative z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">
+    <span className="relative z-10 mt-2 block text-base text-neutral-500 dark:text-indigo-500/80 transition-colors duration-500 group-hover:text-neutral-50">
       {subheading}
     </span>
   </div>

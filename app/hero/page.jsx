@@ -11,22 +11,22 @@ const PageHero = () => {
   return (
     <AnimatePresence>
       <motion.section
-        className=" w-full h-[calc(100vh-6rem)] relative bg-white">
+        className=" w-full h-[calc(100vh-6rem)] relative bg-white dark:bg-slate-950">
 
 
-          <div className="w-full mx-auto bg-light dark:bg-dark overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+          <div className="w-full mx-auto  overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="w-full h-full flex max-lg:flex-col justify-between mt-[40px] gap-4">
 
 
               <div className=" flex flex-col flex-[2]">
-                <h1 className="text-5xl lg:text-7xl xl:text-9xl font-oswald font-semibold text-slate-900 uppercase max-w-96">
+                <h1 className="text-5xl lg:text-7xl xl:text-9xl font-oswald font-semibold text-slate-950 dark:text-slate-100 uppercase max-w-96">
                   <TextSplit phrase="Développeur Front-End" delay={0.08} />
                 </h1>
               </div>
 
               <div className="flex flex-1 flex-col justify-between h-[50vh] gap-10">
                 <div className="flex flex-1 mt-10 max-lg:justify-center">
-                  <p className="paragraph max-w-96 text-balance">
+                  <p className="paragraph max-w-96 text-balance text-slate-950 dark:text-slate-200">
                     <TextSplit
                       phrase="Je suis un Développeur web, basé en Aquitaine, France. Je suis passionné par la conception web depuis que ça existe, et j'aime créer sur tous supports."
                       delay={0.04}
@@ -34,7 +34,9 @@ const PageHero = () => {
                   </p>{" "}
                 </div>
                 <div className="w-full flex-1 flex max-lg:justify-end">
-                  <h1 className="h1 font-oswald font-semibold text-slate-900 uppercase max-w-[28rem] ">
+                  <h1
+                  style={{ lineHeight: 0.9}}
+                   className="h1 font-oswald font-semibold text-slate-950 dark:text-slate-300 uppercase max-w-[28rem]">
                     {/* <TextSplit phrase="React Freelance" delay={0.02} /> */}
                     <LetterSplitX phrase="React" delay={0.05} />
                     <LetterSplitX phrase="Freelance" delay={0.09} />

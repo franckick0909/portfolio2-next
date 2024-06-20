@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavTop from "./NavTop";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Toggle from "./Toggle";
 
 const navLinks = [
   { text: "Home", href: "/" },
@@ -18,37 +19,48 @@ const Header = () => {
   const topVariants = {
     close: {
       y: 0,
+      rotate: 0,
+      scale: [0.6, 1],
       transition: {
-        duration: 0.1,
-        ease: "easeInOut",
+        when: "afterChildren",
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
       },
     },
     open: {
-      y: "0.5rem",
+      y: "0.45rem",
       rotate: 45,
       originX: "center",
-      backgroundColor: "white",
+      scale: 0.6,
+      // backgroundColor: "white",
       transition: {
-        duration: 0.5,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
       },
     },
   };
 
   const middleVariants = {
     close: {
-      when: "afterChildren",
       opacity: 1,
+      scale: [0, 1],
+      originX: "left",
       transition: {
-        duration: 0.2,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 80,
+        damping: 20,
+        delay: 0.3,
       },
     },
     open: {
       opacity: 0,
+      scale: 0,
       transition: {
-        duration: 0.7,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
       },
     },
   };
@@ -56,23 +68,30 @@ const Header = () => {
   const bottomVariants = {
     close: {
       y: 0,
+      rotate: 0,
+      scale: [0.6, 1],
       transition: {
         when: "afterChildren",
-        duration: 0.2,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+
       },
     },
     open: {
       y: "-0.5rem",
       rotate: -45,
       originX: "center",
-      backgroundColor: "white",
+      scale: 0.6,
+      // backgroundColor: "white",
       transition: {
-        duration: 0.5,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
       },
     },
   };
+
 
   const menuVariants = {
     initial: {
@@ -111,14 +130,18 @@ const Header = () => {
 
   return (
     
-    <header className="py-8 relative bg-light dark:bg-dark overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <header className="py-8 relative bg-white dark:bg-slate-950 overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="">
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-4xl font-semibold text-slate-950 dark:text-white">
             FK<span className="text-indigo-500">.</span>
           </h1>
         </Link>
+
+        <div className="flex h-full items-end justify-start w-full ml-8">
+          <Toggle />
+        </div>
 
         {/* Menu on top */}
         <div className="w-full max-lg:hidden">
@@ -133,10 +156,10 @@ const Header = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
-              className="h-16 w-16 max-lg:h-12 max-lg:w-12 bg-slate-900 rounded-full shadow flex flex-col justify-center items-center gap-[5px] z-50 relative"
+              className="h-16 w-16 max-lg:h-12 max-lg:w-12 bg-slate-950 dark:bg-transparent rounded-full flex flex-col justify-center items-center gap-[5px] z-50 relative"
               onClick={() => setIsOpen((prev) => !prev)}
             >
-              <div className="absolute flex items-center justify-center h-14 w-14  rounded-full ring-1 ring-indigo-500 "></div>
+              <div className="absolute flex items-center justify-center h-14 w-14 max-lg:h-10 max-lg:w-10  rounded-full ring-1 ring-indigo-500 "></div>
               <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -145,17 +168,17 @@ const Header = () => {
               <motion.div
                 variants={topVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
+                className="w-10 max-lg:w-7 h-[2px] bg-white rounded"
               ></motion.div>
               <motion.div
                 variants={middleVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
+                className="w-10 max-lg:w-7 h-[2px] bg-white rounded"
               ></motion.div>
               <motion.div
                 variants={bottomVariants}
                 animate={isOpen ? "open" : "close"}
-                className="w-10 max-lg:w-8 h-[2px] bg-white rounded"
+                className="w-10 max-lg:w-7 h-[2px] bg-white rounded"
               ></motion.div></motion.div>
             </motion.button>
           </div>

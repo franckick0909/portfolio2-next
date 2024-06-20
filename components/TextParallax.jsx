@@ -79,7 +79,9 @@ const Slider = ({ src, left, progress, direction }) => {
 const Phrase = ({ src, p }) => {
   return (
     <div className="flex gap-5 items-center px-5 my-1 bg-indigo-500 py-1">
-      <p className=" font-Plaster  lg:text-[7.5vw]">{p}</p>
+      <p
+      style={{ lineHeight: 0.75}}
+       className=" font-Plaster  lg:text-[7.5vw]">{p}</p>
       <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
         <Image src={src} alt="image" className="w-full h-full object-cover" />
       </span>

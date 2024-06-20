@@ -1,16 +1,16 @@
 "use client";
 
-import { useRef, useState } from "react";
 import Collapse from "@/components/Collapse";
+import LetterSplitX from "@/components/LetterSplitX";
 import img1 from "@/public/images/bank1.png";
+import img6 from "@/public/images/bank4.png";
 import img2 from "@/public/images/bluel1.png";
-import img3 from "@/public/images/portfolio1.png";
 import img4 from "@/public/images/moviedb3.png";
 import img5 from "@/public/images/ohmyfood1.png";
-import img6 from "@/public/images/bank4.png";
-import { RiListSettingsLine } from "react-icons/ri";
+import img3 from "@/public/images/portfolio1.png";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import LetterSplitX from "@/components/LetterSplitX";
+import { useRef, useState } from "react";
+import { RiListSettingsLine } from "react-icons/ri";
 
 const projet = [
   {
@@ -121,9 +121,13 @@ const PortfolioPage = () => {
 
   return (
     <AnimatePresence>
-      <motion.section className="w-full min-h-screen relative bg-light dark:bg-dark overflow-hidden">
+      <motion.section className="w-full min-h-screen relative bg-white dark:bg-slate-950 overflow-hidden">
+
         <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 text-xl py-14">
-          <motion.h1 className="uppercase inline-flex items-center title my-20">
+          <motion.h1
+            style={{ lineHeight: 0.75 }}
+            className="uppercase inline-flex items-center title my-48 text-black dark:text-white"
+          >
             <LetterSplitX phrase="Mes Projets" />
           </motion.h1>
 
@@ -146,10 +150,10 @@ const PortfolioPage = () => {
                   stiffness: 100,
                   damping: 20,
                 }}
-                className="max-w-full lg:w-56 bg-black p-4 rounded-lg mt-0"
+                className="max-w-full lg:w-56 p-4 rounded-lg mt-0 bg-white dark:bg-slate-950/10  border border-slate-200 dark:border-slate-900 shadow-inner dark:shadow dark:shadow-slate-900 shadow-indigo-500/30 "
               >
                 <div className="">
-                  <h4 className="h4 font-poppins mb-4 text-white flex items-center justify-between">
+                  <h4 className="h4 font-poppins mb-4 text-black dark:text-white flex items-center justify-between">
                     Filtres{" "}
                     <span>
                       <RiListSettingsLine />
@@ -157,71 +161,73 @@ const PortfolioPage = () => {
                   </h4>
                 </div>
                 <div className="border-b-[0.5px] border-indigo-100 mb-8"></div>
-                <div className="grider2 place-content-start place-items-start">
+                <div className="grider2 place-content-start place-items-start gap-2">
                   <button
                     onClick={() => setFilter("Tous")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
-                      filter === "Tous" ? "bg-indigo-500 text-white" : ""
+                    className={` rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                      filter === "Tous"
+                        ? "bg-indigo-500 text-white"
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Tous
                   </button>
                   <button
                     onClick={() => setFilter("Site Portfolio")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={` rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Portfolio"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Portfolio
                   </button>
                   <button
                     onClick={() => setFilter("Site Vitrine")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={`rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Vitrine"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Vitrine
                   </button>
                   <button
                     onClick={() => setFilter("Site Ecommerce")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={` rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Ecommerce"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Ecommerce
                   </button>
                   <button
                     onClick={() => setFilter("Site Evènement")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={` rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Evènement"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Evènement
                   </button>
                   <button
                     onClick={() => setFilter("Site Personnel")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={`rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Personnel"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Personnel
                   </button>
                   <button
                     onClick={() => setFilter("Site Entreprise")}
-                    className={`text-white rounded-md paragraph hover:text-indigo-500 hover:bg-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
+                    className={`rounded-sm flex w-full paragraph hover:bg-indigo-500 hover:text-white px-4 py-2 hover:translate-x-2 transition-all duration-300 ${
                       filter === "Site Entreprise"
                         ? "bg-indigo-500 text-white"
-                        : ""
+                        : "bg-indigo-500/30 text-black"
                     }`}
                   >
                     Site Entreprise

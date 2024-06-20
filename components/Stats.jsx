@@ -31,7 +31,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="w-full bg-light dark:bg-dark px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
       <motion.div
         variants={slideDown}
         initial="initial"
@@ -43,7 +43,7 @@ const Stats = () => {
           <motion.div
             variants={slideDown}
             key={index}
-            className="w-full flex flex-1 flex-wrap gap-0 lg:gap-2 xl:gap-4 items-center justify-start border rounded-md px-2 py-1 shadow-sm  bg-light dark:bg-dark"
+            className="w-full flex flex-1 flex-wrap gap-0 lg:gap-2 xl:gap-4 items-center justify-start border border-slate-200 dark:border-slate-700 rounded-md px-2 py-1 shadow-inner bg-white dark:bg-slate-950"
           >
             <CountUp
               start={0}
@@ -60,7 +60,7 @@ const Stats = () => {
             <p
               className={` ${
                 stat.title.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-              } leading-snug text-black/80 paragraph`}
+              } leading-snug text-black/80 dark:text-white/80 paragraph`}
             >
               {stat.title}
             </p>
